@@ -40,3 +40,4 @@ out/
 .env
 .env.prod
 .env.local
+!.env.example
