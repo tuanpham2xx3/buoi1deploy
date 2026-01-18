@@ -6,8 +6,8 @@ spring:
     name: re-shopping-cart-web-app
 
   profiles:
-    active: ${SPRING_PROFILES_ACTIVE:local}
-    # active: prod # Production development
+    # active: ${SPRING_PROFILES_ACTIVE:local}
+    active: prod # Production development
 
   datasource:
     url: ${DB_URL}

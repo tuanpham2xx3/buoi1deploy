@@ -110,7 +110,12 @@ jobs:
               --name re-shopping-cart-app \
               --restart unless-stopped \
               -p 8080:8080 \
-              --env-file /home/${{ secrets.EC2_USERNAME }}/.env.prod \
+              -e SPRING_PROFILES_ACTIVE=prod \
+              -e DB_URL="${{ secrets.DB_URL }}" \
+              -e DB_USERNAME="${{ secrets.DB_USERNAME }}" \
+              -e DB_PASSWORD="${{ secrets.DB_PASSWORD }}" \
+              -e JAVA_OPTS="-Xms512m -Xmx512m -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0" \
+              -e TZ=UTC \
               ${{ secrets.DOCKERHUB_USERNAME }}/re-shopping-cart-web-app:latest
 
             # Show container status

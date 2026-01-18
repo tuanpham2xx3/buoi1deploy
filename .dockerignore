@@ -27,6 +27,11 @@ gradle-wrapper.properties
 .env.*
 !.env.example
 
+# SSH Keys and Certificates
+*.pem
+*.key
+*.ppk
+
 # Documentation
 *.md
 docs/
