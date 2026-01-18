@@ -10,7 +10,7 @@ spring:
     active: prod # Production development
 
   datasource:
-    url: ${DB_URL}
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT:3306}/${DB_NAME:defaultdb}?useSSL=true&requireSSL=false&serverTimezone=UTC
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
